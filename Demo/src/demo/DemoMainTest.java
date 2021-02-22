@@ -34,18 +34,12 @@ class DemoMainTest {
 
 	@Test
 	public void test_is_triangle_1() {
-		DemoMain.isTriangle(10.0, 14.0, 8.0);
-		String output = baOut.toString();
-		
-		assertEquals("true", output);
+		assertEquals("true", DemoMain.isTriangle(10.0, 14.0, 8.0));
 	}
 
 	@Test
 	public void test_is_triangle_2() {
-		DemoMain.isTriangle(1, 5, 3);
-		String output = baOut.toString();
-		
-		assertEquals("true", output);
+		assertEquals("true", DemoMain.isTriangle(1, 5, 3));
 	}
 	
 	@Test
