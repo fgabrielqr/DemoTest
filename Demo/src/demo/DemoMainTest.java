@@ -35,20 +35,48 @@ class DemoMainTest {
 
 	@Test
 	public void test_is_triangle_1() {
-		assertEquals("true", DemoMain.isTriangle(10.0, 14.0, 8.0));
+		assertTrue(DemoMain.isTriangle(3, 4, 5));
 	}
 
 	@Test
 	public void test_is_triangle_2() {
-		assertEquals("false", DemoMain.isTriangle(1, 5, 3));
+		assertTrue(DemoMain.isTriangle(5, 12, 13));
+	}
+
+	@Test
+	public void test_is_triangle_3() {
+		assertTrue(DemoMain.isTriangle(5, 13, 12));
+	}
+
+	@Test
+	public void test_is_triangle_4() {
+		assertTrue(DemoMain.isTriangle(12, 5, 13));
+	}
+
+	@Test
+	public void test_is_triangle_5() {
+		assertTrue(DemoMain.isTriangle(12, 13, 5));
+	}
+
+	@Test
+	public void test_is_triangle_6() {
+		assertTrue(DemoMain.isTriangle(0.2, 0.2, 0.2));
+	}
+
+	@Test
+	public void test_is_NOT_triangle_1() {
+		assertFalse(DemoMain.isTriangle(5, 7, 13));
+	}
+	@Test
+	public void test_is_NOT_triangle_2 () {
+		assertFalse(DemoMain.isTriangle (5, 13, 7));
 	}
 
 	@Test
 	public void test_main_program1() {
-		ByteArrayInputStream in = new ByteArrayInputStream("5\n6\n9\n".getBytes());
+		ByteArrayInputStream in = new ByteArrayInputStream("10\n14\n8\n".getBytes());
 		System.setIn(in);
-		
-		
+
 		String[] args = {};
 		DemoMain.main(args);
 		String output = baOut.toString();
@@ -60,12 +88,12 @@ class DemoMainTest {
 
 		assertEquals(consoleOutput, output);
 	}
-	
+
 	@Test
 	public void test_main_program2() {
-		ByteArrayInputStream in = new ByteArrayInputStream("4\n4\n12\n".getBytes());
+		ByteArrayInputStream in = new ByteArrayInputStream("1\n5\n3\n".getBytes());
 		System.setIn(in);
-		
+
 		String[] args = {};
 		DemoMain.main(args);
 		String output = baOut.toString();
