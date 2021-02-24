@@ -9,6 +9,12 @@ import java.io.PrintStream;
 import org.junit.jupiter.api.Test;
 
 class DemoMainTest {
+	
+	@Test
+	//All sides zero
+	public void test_is_triangle_0() {
+		assertFalse(DemoMain.isTriangle(0, 0, 0));
+	}
 
 	@Test
 	public void test_is_triangle_1() {
@@ -16,8 +22,44 @@ class DemoMainTest {
 	}
 
 	@Test
+	//No side may have a length of zero
 	public void test_is_triangle_2() {
 		assertFalse(DemoMain.isTriangle(2.5, 2.5, 0));
+	}
+	
+	@Test
+	//No side may have a length of zero
+	public void test_is_triangle_2_1() {
+		assertFalse(DemoMain.isTriangle(0, 2.5, 2.5));
+	}
+	
+	@Test
+	//No side may have a length of zero
+	public void test_is_triangle_2_2() {
+		assertFalse(DemoMain.isTriangle(2.5, 0, 2.5));
+	}
+	
+	@Test
+	//One side equals the sum of the other
+	public void test_is_triangle_2_2_1() {
+		assertFalse(DemoMain.isTriangle(12, 5, 7));
+		assertFalse(DemoMain.isTriangle(5, 12, 7));
+		assertFalse(DemoMain.isTriangle(5, 7, 12));
+	}
+	
+	@Test
+	//Each side must be shorter than the sum of all sides divided by 
+	public void test_is_triangle_2_3() {
+		assertFalse(DemoMain.isTriangle(10, 4, 5));
+	}
+	@Test
+	public void test_is_triangle_2_3_1() {
+		assertFalse(DemoMain.isTriangle(4, 10, 5));
+	}
+	
+	@Test
+	public void test_is_triangle_2_3_2() {
+		assertFalse(DemoMain.isTriangle(5, 10, 4));
 	}
 
 	@Test
